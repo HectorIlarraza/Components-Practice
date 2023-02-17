@@ -6,37 +6,43 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  // Handle changes in the email input field
+const handleEmailChange = (e) => {
+  setEmail(e.target.value);
+};
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+// Handle changes in the password input field
+const handlePasswordChange = (e) => {
+  setPassword(e.target.value);
+};
 
-  const handleLoginFormSubmit = (e) => {
-    e.preventDefault();
+// Handle form submission
+const handleLoginFormSubmit = (e) => {
+  // Prevent the default form submission behavior
+  e.preventDefault();
 
-    // Here we would make an API request to authenticate the user
-    // and receive a token if authentication is successful.
-    // For simplicity, we'll just hardcode the token here.
-    const authToken = "my-auth-token";
+  // Make an API request to authenticate the user
+  // and receive a token if authentication is successful.
+  // For simplicity, we'll just hardcode the token here.
+  const authToken = "my-auth-token";
 
-    // If we have a token, set the `isLoggedIn` state to `true`.
-    if (authToken) {
-      setIsLoggedIn(true);
-    }
-  };
+  // If we have a token, set the `isLoggedIn` state to `true`.
+  if (authToken) {
+    setIsLoggedIn(true);
+  }
+};
 
-  const handleLogoutButtonClick = () => {
-    // Clear the token from local storage or cookies, depending on the implementation.
-    // For simplicity, we'll just remove it from state here.
-    setIsLoggedIn(false);
-  };
+// Handle click on the logout button
+const handleLogoutButtonClick = () => {
+  // Clear the token from local storage or cookies, depending on the implementation.
+  // For simplicity, we'll just remove it from state here.
+  setIsLoggedIn(false);
+};
 
-  const handleSwitchMode = () => {
-    setIsLoggedIn((prevState) => !prevState);
-  };
+// Handle click on the switch mode button
+const handleSwitchMode = () => {
+  setIsLoggedIn((prevState) => !prevState);
+};
 
   return (
     <div className="auth-container">
